@@ -32,8 +32,8 @@ public class Cell {
         }
     }
 
-    private static boolean nextState(boolean state, int neighbors) {
-        if (state) {
+    private static boolean nextState(boolean alive, int neighbors) {
+        if (alive) {
             return neighbors == 2 || neighbors == 3;
         }
         return neighbors == 3;

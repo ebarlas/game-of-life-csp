@@ -1,6 +1,6 @@
 ## Game of Life CSP
 
-Game of Life CSP is a Java implementation of Conway's Game of Life
+Game of Life CSP is a Java implementation of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 using communicating sequential processes (CSP). 
 
 Each grid cell is an independent process and all cell communication occurs via channels.
@@ -8,6 +8,8 @@ Each grid cell is an independent process and all cell communication occurs via c
 It's built atop virtual threads, defined in [JDK Enhancement Proposal (JEP) 425](https://openjdk.java.net/jeps/425).
 
 The virtual threads feature is part of [Project Loom](https://openjdk.java.net/projects/loom/).
+
+Prior to Project Loom and virtual threads, CSP style programming in this manner simply wasn't available in Java.
 
 ![Channels](images/game-of-life-channels.png)
 
@@ -105,6 +107,8 @@ the main application consumer.
 ## Benchmark
 
 The following command results in a grid of 50,000 cells (250 x 200):
+
+That results in `50,002` virtual threads and `497,305` channels.
 
 ```
 java --enable-preview -cp target/classes/ gameoflife.Main patterns/puffer_train.txt 1600 800 0 235 91 10 91 true true

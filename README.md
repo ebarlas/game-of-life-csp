@@ -1,7 +1,7 @@
 ## Game of Life CSP
 
 Game of Life CSP is a Java implementation of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
-using communicating sequential processes (CSP). 
+using [communicating sequential processes (CSP)](https://en.wikipedia.org/wiki/Communicating_sequential_processes). 
 
 Each grid cell is an independent process and all cell communication occurs via channels.
 
